@@ -39,5 +39,9 @@ export default Ember.Component.extend({
         ]);
 
     this.$().masonry(options);
+    var masonry_grid = this.$();
+    this.$().imagesLoaded(function() {
+      masonry_grid.masonry();
+    });
   }.on('didInsertElement').observes('items.length')
 });
